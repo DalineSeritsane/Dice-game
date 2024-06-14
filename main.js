@@ -28,5 +28,25 @@ function rollTheDice() {
     setTimeout(() => {
         let randomNumber1 = Math.floor(Math.random()*6)+1;
         let randomNumber2 = Math.floor(Math.random()*6)+1;
-    }, timeout)
+
+        diceNum1.setAttribute('src', 'dice'+randomNumer1+'.png)
+        diceNum2.setAttribute('src', 'dice'+randomNumber2+'.png')   
+        
+        
+        //determing the winner
+        if(randomNumber1 === randomNumber2){
+            result.innerHTML = "Draw!"
+        }
+        else if(randomNumber1<randomNumber2){
+            result.innerHTML = (player2+ "Wins!");
+            
+        }
+        else{result.innerHTML = (player1+ "Wins!");
+
+        }
+    
+    
+    
+    
+    }, 2500);
 }
