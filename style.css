@@ -1,0 +1,56 @@
+.container{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.dice{
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+}
+body {
+    background-color: blueviolet;
+    margin: 0;
+}
+
+h1 {
+    margin: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif, cursive;
+    font-size: 4.5rem;
+    color: antiquewhite;
+    text-align: center;
+}
+
+p {
+    font-size: medium;
+    color: antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+.bottom{
+    padding-top: 30px;
+}
+
+.btn {
+    background: antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 7px;
+    color: black;
+    font-size: medium;
+    padding: 16px 25px 16px 25px;
+    text-decoration: none;
+
+}
+
+.even-roll{
+    transition: transform 1.5s ease-out;
+}
+
+.add-roll{
+    transition: transform 1.25s ease-out;
+}

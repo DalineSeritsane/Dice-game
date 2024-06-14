@@ -18,8 +18,8 @@ function editNames(){
 }
 
 function rollTheDice() {
-    let diceNum1 = document.querySelector("img1");
-    let diceNum2 = document.querySelector("img2");
+    let diceNum1 = document.querySelector(".img1");
+    let diceNum2 = document.querySelector(".img2");
 
     diceNum1.setAttribute("src", "diceroll.gif")
     diceNum2.setAttribute("src", "diceroll.gif")
