@@ -2,8 +2,8 @@ let player1 = "Player1";
 let player2 = "Player2";
 
 function editNames(){
-    player1 = prompt("Change Player1 Name")
-    player2 = prompt("Change Player2 Name")
+    player1Name = prompt("Change Player1 Name")
+    player2Name = prompt("Change Player2 Name")
 
     if(player1.length<1 || player2.lenght <1) {
         alert("Please enter valid names");
@@ -16,35 +16,41 @@ function editNames(){
     .innerHTML = player2;
 
 }
+// function to roll the dice
+function rollTheDice(){
+    let roundNumber = rollTheDice.roundNumber || 1;
 
-function rollTheDice() {
-    let diceNum1 = document.querySelector(".img1");
-    let diceNum2 = document.querySelector(".img2");
+    var player1Roll = Math.floor(Math.random()* 6)+1;
+    var player2Roll = Math.floor(Math.random()* 6)+1;
 
-    diceNum1.setAttribute("src", "diceroll.gif")
-    diceNum2.setAttribute("src", "diceroll.gif")
+    document.querySelector('.dice-player-one').src= 'images/dice' + player1Roll + '.png';
+    document.querySelector('.dice-player-two').src= 'images/dice' + player2Roll + '.png';
 
-    let result = document.querySelector('h1')
-    setTimeout(() => {
-        let randomNumber1 = Math.floor(Math.random()*6)+1;
-        let randomNumber2 = Math.floor(Math.random()*6)+1;
+    const player1 = player1Name[0].textContent;
+    const player2 = player2Name[1].textContent;
 
-        diceNum1.setAttribute('src', 'dice'+randomNumer1+'.png');
-        diceNum2.setAttribute('src', 'dice'+randomNumber2+'.png');   
-        
-        
-        //determing the winner
-        if(randomNumber1 === randomNumber2){
-            result.innerHTML = "Draw!"
-        }
-        else if(randomNumber1<randomNumber2){
-            result.innerHTML = (player2+ "Wins!");
-            
-        }
-        else{result.innerHTML = (player1+ "Wins!");
+    //tracking scores of players
 
-        }
-        
-    }, 2500);
-    
+    rollTheDice.player1Score = rollTheDice.player1Score || 0;
+    rollTheDice.player2Score = rollTheDice.player2Score || 0;
+
+    //determiner winner and update the h1 element
+    var resultText = '';
+    if(player1Roll > player2Roll){
+        resultText = player1 + ' wins this round!';
+} else if(player2Roll > player1Roll) {
+    resultText = player2 + ' wins this round!';
+}else {
+    resultText = "Its a Draw!";
 }
+
+document.querySelector('h1').textContent = resultext;
+
+if(roundNumber % 3 === 0){
+    alert("Leader Board Results:"+ "\n" + player1 + ":" + rollTheDice.player1Score + "\n" + player2 + ":" + rollTheDice.player1Score);
+}
+//add on to scores already written
+roundNumber++;
+rollTheDice.roundNumber = roundNumber;
+}
+
