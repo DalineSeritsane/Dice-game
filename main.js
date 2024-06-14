@@ -29,7 +29,7 @@ function rollTheDice() {
         let randomNumber1 = Math.floor(Math.random()*6)+1;
         let randomNumber2 = Math.floor(Math.random()*6)+1;
 
-        diceNum1.setAttribute('src', 'diceroll'+randomNumer1+'.png');
+        diceNum1.setAttribute('src', 'dice'+randomNumer1+'.png');
         diceNum2.setAttribute('src', 'dice'+randomNumber2+'.png');   
         
         
@@ -44,9 +44,7 @@ function rollTheDice() {
         else{result.innerHTML = (player1+ "Wins!");
 
         }
-    
-    
-    
-    
+        
     }, 2500);
+    
 }
